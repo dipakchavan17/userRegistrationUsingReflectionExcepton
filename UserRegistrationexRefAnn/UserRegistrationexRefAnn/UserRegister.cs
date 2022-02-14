@@ -9,20 +9,30 @@ namespace UserRegistrationexRefAnn
 {
     public class UserRegister
     {
-        // Static Variable
         public static string firstNamePattern = "^[A-Z]{1}[a-z]{2}";
         public static string lastNamePattern = "^[A-Z]{1}[a-z]{2}";
         public static string emailPattern = "^[a-zA-z]{3}([.]*[a-zA-Z])+[@]([a-z]{3,})+([.][a-z]{2,3})*$";
         public static string mobilePattern = "^([9][1])[ ]*[6-9]{1}[0-9]{9}$";
         public static string passwordPattern = "^(?=.*?[0-9])(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[@#$&*.!?]).{8,}";
         public static string sampleEmailPattern = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
-        //Method to Validate First Name
+        //Exception Handling
         public static string ValidatePattern(string userInput, string pattern)
         {
-            if (Regex.IsMatch(userInput, pattern))
-                return "true";
-            else
-                return "false";
+            try
+            {
+                if (Regex.IsMatch(userInput, pattern))
+                {
+                    return "true";
+                }
+                else
+                {
+                    throw new UserRegisterException(UserRegisterException.ExceptionType.EXCEPTION, "false");
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
         //Method to Validate First Name
         public static string ValidateFirstName(string name)
