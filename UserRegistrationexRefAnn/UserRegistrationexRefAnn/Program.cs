@@ -14,7 +14,7 @@ namespace UserRegistrationexRefAnn
             while (Continue)
             {
                 Console.WriteLine("Choose Option to Validate with their specified Pattern");
-                Console.WriteLine("1 = First Name\n2 = Last Name\n3 =Email ID\n4 = Mobile Number\n5 = Password\n0 = Exit");
+                Console.WriteLine("1 = First Name\n2 = Last Name\n3=MobileNumber\n0=Exit");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
@@ -32,19 +32,9 @@ namespace UserRegistrationexRefAnn
                         Console.WriteLine(UserRegister.ValidateFirstName(lastName));
                         break;
                     case 3:
-                        Console.WriteLine("Enter Email ID");
-                        string email = Console.ReadLine();
-                        Console.WriteLine(UserRegister.ValidateEmailID(email));
-                        break;
-                    case 4:
                         Console.WriteLine("Enter Mobile Number");
                         string mobileNumber = Console.ReadLine();
                         Console.WriteLine(UserRegister.ValidateMobileNumber(mobileNumber));
-                        break;
-                    case 5:
-                        Console.WriteLine("Enter PassWord");
-                        string password = Console.ReadLine();
-                        Console.WriteLine(UserRegister.ValidatePassword(password));
                         break;
                     default:
                         Console.WriteLine("Enter Correct Option!");
