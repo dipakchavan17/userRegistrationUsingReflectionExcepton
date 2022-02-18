@@ -9,6 +9,7 @@ namespace UserRegistrationexRefAnn
 {
     public class UserRegister
     {
+       // Static Variable
         public static string firstNamePattern = "^[A-Z]{1}[a-z]{2}";
         public static string lastNamePattern = "^[A-Z]{1}[a-z]{2}";
         public static string emailPattern = "^[a-zA-z]{3}([.]*[a-zA-Z])+[@]([a-z]{3,})+([.][a-z]{2,3})*$";
